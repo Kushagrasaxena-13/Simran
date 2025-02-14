@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Day Special</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f7f7f7;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Happy Valentine on top */
+    .header {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ff6f61;
+      padding: 20px;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .header::after {
+      content: "💖";
+      font-size: 3rem;
+      position: absolute;
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    /* Image styles */
+    .image {
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.9;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .image:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    /* Video styles */
+    .video {
+      width: 100%;
+      padding: 20px;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .video:hover {
+      background-color: #ffeddf;
+      transform: scale(1.02);
+    }
+
+    video {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 8px;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Cute Note Styles */
+    .note-container {
+      width: 70%;
+      max-width: 400px;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #ffeddf;
+      border-radius: 15px;
+      box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      text-align: center;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .note-container:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.1);
+    }
+
+    .note {
+      display: none;
+      background-color: #fff;
+      padding: 25px;
+      font-size: 18px;
+      font-weight: 300;
+      color: #333;
+      line-height: 1.8;
+      border-radius: 10px;
+      box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.5s ease-in-out;
+      transform: translateY(20px);
+    }
+
+    .note.open {
+      display: block;
+      transform: translateY(0);
+    }
+
+    .note p {
+      margin: 0;
+    }
+
+    /* Back to top button */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #ff6f61;
+      color: white;
+      font-size: 16px;
+      padding: 10px 20px;
+      border-radius: 50px;
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .back-to-top:hover {
+      background-color: #e55c51;
+      transform: scale(1.1);
+    }
+
+    /* Responsiveness */
+    @media (max-width: 768px) {
+      .header {
+        font-size: 2rem;
+      }
+
+      .note-container {
+        width: 80%;
+        padding: 15px;
+      }
+
+      .note {
+        font-size: 16px;
+      }
+
+      .video {
+        padding: 10px;
+      }
+
+      video {
+        max-width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      Happy Valentine’s Day Simran
+    </div>
+
+    <!-- First Image -->
+    <div class="image" style="background-image: url('valentine.jpg');"></div>
+
+    <!-- Second Image -->
+    <div class="image" style="background-image: url('photo2.jpg');"></div>
+
+    <!-- Third Image -->
+    <div class="image" style="background-image: url('photo1.jpeg');"></div>
+
+    <!-- Video Section -->
+    <div class="video">
+      <video controls>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Cute Note Container -->
+    <div class="note-container" onclick="toggleNote()">
+      <p>Click me for a cute note! 💌</p>
+      <div class="note" id="note">
+        <p>
+            My Dearest Simran,
+
+            I just wanted to take a moment to remind you how incredibly special you are to me. Every time I think of you, I’m filled with warmth and gratitude. You are not just beautiful on the outside, but your heart radiates kindness and love.
+            
+            I feel so lucky to have you in my life. You always go above and beyond to take care of me, whether it’s with my meals or just making sure I’m okay. You never fail to put others first, making them feel comfortable and loved, just like you’ve done for me. It’s one of the many things I admire about you—how effortlessly you make everyone around you feel cared for.
+            
+            Your beauty shines, but it’s your selflessness, your grace, and your heart that make you truly one-of-a-kind. I can’t imagine my world without you in it. You make everything better, and I promise to cherish and appreciate you every day.
+            
+            Thank you for being you—wonderful, caring, and beautiful Simran.
+            
+            With all my love,
+            - Kush
+        </p>
+      </div>
+    </div>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+      Back to Top
+    </button>
+  </div>
+
+  <script>
+    // Function to toggle the note visibility when the note container is clicked
+    function toggleNote() {
+      const note = document.getElementById('note');
+      note.classList.toggle('open');
+    }
+  </script>
+</body>
+</html>
